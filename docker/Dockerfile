@@ -89,8 +89,11 @@ RUN Rscript -e 'install.packages("BiocManager", repos = "https://cloud.r-project
     && Rscript -e 'BiocManager::install("batchelor")' \
     && Rscript -e 'BiocManager::install("bluster")' \
     && Rscript -e 'BiocManager::install("miloR")' \
-    && Rscript -e 'devtools::install_github("MarioniLab/miloR", ref="devel")' 
- 
+    && Rscript -e 'devtools::install_github("MarioniLab/miloR", ref="devel")' \
+    && Rscript -e 'install.packages("robustbase")' \
+    && Rscript -e 'install.packages("ggplotify")'
+
+
 #install CellRanger
 RUN wget -c https://github.com/GenomicsAotearoa/scRNA-seq-data-analysis/releases/download/2024-Apr/cellranger-8.0.0.tar.gz \
     && tar -xzf cellranger-8.0.0.tar.gz \
